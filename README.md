@@ -155,7 +155,7 @@ automation:
 
 ```
 ### YAML for todoist grocery list
-This requires integrations such as 
+This requires integrations such as and a list named "grocery list".
 [Todoist](https://www.home-assistant.io/integrations/todoist/),
 [ToDo](https://www.home-assistant.io/integrations/todo/),
 
