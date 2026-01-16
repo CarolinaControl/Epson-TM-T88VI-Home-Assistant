@@ -34,7 +34,7 @@ Before integrating with Home Assistant, you must identify the printer's current 
 To ensure Home Assistant never loses the connection, you **must** assign a static IP address to the Epson.
 
 ### Using EpsonNet Config (Recommended)
-1. Download the **EpsonNet Config** utility from the [Epson Support Site](https://epson.com/Support/Point-of-Sale/OmniLink-Printers/Epson-TM-T88VI-Series/s/SPT_C31CE94061) under Downloads --> Utilities after you select your OS
+1. Download the **EpsonNet Config** utility from the [Epson Support Site](https://epson.com/Support/Point-of-Sale/OmniLink-Printers/Epson-TM-T88VI-Series/s/SPT_C31CE94061) under Downloads --> Utilities (You have to select your OS)
 2. Connect the printer to your network via Ethernet.
 3. Open the utility; it will scan and find your TM-T88VI.
 4. Select the printer and go to **TCP/IP** -> **Basic**.
