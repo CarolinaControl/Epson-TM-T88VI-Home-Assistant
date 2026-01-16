@@ -97,18 +97,19 @@ Different printer models support different widths:
 
 ## 5. Usage & Formatting
 
-Once the integration is active, you can send print jobs using the notify.epson_printer service. This can be done via scripts, automations, or the Developer Tools UI.
+Once the integration is active, you can send test prints using ```receipt_printer.print_text```. This can be done via Developer Tools > Action > receipt_printer.print_text
 ### Test
-Basic Service Call to verify your setup, go to Developer Tools > Services and paste the following:
-
-```
-yaml
-service: notify.epson_printer
+```yaml
+action: receipt_printer.print_text
 data:
-  message: "HELLO FROM HOME ASSISTANT"
-  data:
-    align: "center"
-    format: "bold"
+  align: left
+  font: a
+  bold: false
+  double_height: false
+  double_width: false
+  wrap: true
+  cut: true
+  text: test
 ```
 
 ### Automation YAML for day report
