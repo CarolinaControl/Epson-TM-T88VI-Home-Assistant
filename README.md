@@ -111,7 +111,7 @@ data:
     format: "bold"
 ```
 
-### Automation YAML
+### Automation YAML for day report
 This requires integrations such as 
 [Teslemetry](https://www.home-assistant.io/integrations/teslemetry/),
 [Calendar](https://www.home-assistant.io/integrations/calendar/),
@@ -151,6 +151,50 @@ automation:
             Trash: {{ state_attr('calendar.garbage_collection', 'start_time')}} 
             ================================  
 
+```
+### YAML for todoist grocery list
+This requires integrations such as 
+[Todoist](https://www.home-assistant.io/integrations/todoist/),
+[ToDo](https://www.home-assistant.io/integrations/todo/),
+
+```yaml
+alias: Print Grocery  List
+description: Fetches items from Todoist and prints them.
+triggers: []
+actions:
+  - action: todo.get_items
+    target:
+      entity_id: todo.grocery_list
+    data:
+      status: needs_action
+    response_variable: todo_response
+  - action: receipt_printer.print_text
+    data:
+      text: >
+        ================================
+
+
+        GROCERY LIST
+
+
+        {{ now().strftime('%Y-%m-%d %H:%M') }}
+
+
+        ================================
+
+
+        {{ todo_response['todo.grocery_list']['items'] |
+        map(attribute='summary') |
+
+        list | join("
+                
+
+               
+        ")  }}
+
+
+        ================================
+      cut: true
 ```
 ## Troubleshooting
 
