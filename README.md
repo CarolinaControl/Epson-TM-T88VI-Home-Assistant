@@ -105,7 +105,7 @@ data:
     format: "bold"
 ```
 
-###Formatting Attributes
+### Formatting Attributes
 The Epson TM-T88 series supports hardware-level styling via the data block. You can combine multiple formats in a single call.AttributeOptionsDescriptionalignleft, center, rightHorizontal text alignmentformatbold, underline, double_height, double_widthText styling (can be combined)fonta, ba is standard (42 chars/line), b is small (56 chars/line)
 
 ### Automation YAML
