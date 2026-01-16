@@ -30,7 +30,7 @@ Before integrating with Home Assistant, you must identify the printer's current 
 
 ---
 
-## 2. Network Configuration
+## 2. Printer Network Configuration
 To ensure Home Assistant never loses the connection, you **must** assign a static IP address to the Epson.
 
 ### Using EpsonNet Config (Recommended)
