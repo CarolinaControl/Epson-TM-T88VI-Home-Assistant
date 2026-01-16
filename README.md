@@ -111,6 +111,7 @@ data:
   cut: true
   text: test
 ```
+after a sucessful test print, build out automations below.
 
 ### Automation YAML for day report
 This requires integrations such as 
