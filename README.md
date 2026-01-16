@@ -121,17 +121,26 @@ automation:
         data:
           text: |
             ================================
-                 WELCOME HOME JOHN!
+            WELCOME HOME KEVIN!
             ================================
             
-            Time: {{ now().strftime('%H:%M:%S') }}
             Date: {{ now().strftime('%Y-%m-%d') }}
-            
-            Temperature: {{ states('sensor.living_room_temperature') }}°C
-            
-            ================================
-          align: center
-          cut: true
+            Time: {{ now().strftime('%H:%M:%S') }}
+
+            Current Room Temperature: {{ states('sensor.tze200_locansqn_ts0601_temperature') | float(0) | round(0)}}°F
+
+            Current Tesla Battery: {{ states('sensor.battery_level_2') | float(0) | round(0) }}%
+            ================================ 
+            Weather forecast: - Currently: {{states('sensor.openweathermap_condition') }} with a temperature of {{states('sensor.openweathermap_feels_like_temperature') | float(0) | round(0) }}°F
+            Wind: {{states('sensor.openweathermap_wind_speed') | float(0) | round(0)}}mph  
+            ================================ 
+            STONKS: GOOG: ${{ states('sensor.yahoofinance_goog') | float(0) | round(1) }} 
+            ================================  
+            Next Trash and Recyling day
+            Recycle: {{ state_attr('calendar.recycling', 'start_time') }}
+            Trash: {{ state_attr('calendar.garbage_collection', 'start_time')}} 
+            ================================  
+
 ```
 ## Troubleshooting
 
