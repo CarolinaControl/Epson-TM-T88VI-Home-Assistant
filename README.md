@@ -48,7 +48,9 @@ To ensure Home Assistant never loses the connection, you **must** assign a stati
 3.Login (Default: User: epson, Pass: <serial number of printer>).
 4.Navigate to TCP/IP Settings and set your Static IP.
 
-## 3.Home Assistant ha-receipt_printer Integration Installation
+---
+
+## 3. Home Assistant ha-receipt_printer Integration Installation
 ### HACS (Recommended)
 
 1. In HACS, click on "Integrations"
@@ -68,6 +70,8 @@ To ensure Home Assistant never loses the connection, you **must** assign a stati
 4. Download all the files from the `custom_components/receipt_printer/` directory in this repository
 5. Place the files you downloaded in the new `receipt_printer` directory you created
 6. Restart Home Assistant
+
+---
 
 ## 4. Configuration
 
@@ -89,6 +93,8 @@ Be patient as it may take 1-2 mins initially to get going.
 Different printer models support different widths:
 - **Epson TM-T88V/VI** (80mm): Font A = 42 columns, Font B = 56 columns, Image width = 512 pixels
 
+---
+
 ## 5. Usage & Formatting
 
 Once the integration is active, you can send print jobs using the notify.epson_printer service. This can be done via scripts, automations, or the Developer Tools UI.
@@ -106,6 +112,13 @@ data:
 ```
 
 ### Automation YAML
+This requires integrations such as 
+[Teslemetry](https://www.home-assistant.io/integrations/teslemetry/)
+[Calendar](https://www.home-assistant.io/integrations/calendar/)
+[Date/Time](https://www.home-assistant.io/integrations/datetime/)
+[yahoo! finance](https://github.com/iprak/yahoofinance)
+[Open Weather](https://www.home-assistant.io/integrations/openweathermap/)
+
 ```yaml
 automation:
   - alias: "Print Welcome Receipt"
