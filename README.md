@@ -113,10 +113,10 @@ data:
 
 ### Automation YAML
 This requires integrations such as 
-[Teslemetry](https://www.home-assistant.io/integrations/teslemetry/)
-[Calendar](https://www.home-assistant.io/integrations/calendar/)
-[Date/Time](https://www.home-assistant.io/integrations/datetime/)
-[yahoo! finance](https://github.com/iprak/yahoofinance)
+[Teslemetry](https://www.home-assistant.io/integrations/teslemetry/),
+[Calendar](https://www.home-assistant.io/integrations/calendar/),
+[Date/Time](https://www.home-assistant.io/integrations/datetime/),
+[yahoo! finance](https://github.com/iprak/yahoofinance),
 [Open Weather](https://www.home-assistant.io/integrations/openweathermap/)
 
 ```yaml
