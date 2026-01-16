@@ -172,6 +172,6 @@ automation:
 The paper status depends on the printer's sensors. Some printer models may not support all status queries. The integration will still function for printing even if status updates are unavailable.
 
 ## Credits
-- 90% of this guide is from [ha-receipt_printer](https://github.com/zacs/ha-receipt_printer)
+- 90% of this guide is from [ha-receipt_printer](https://github.com/zacs/ha-receipt_printer), so thanks Zac!
 - Built on top of the [python-escpos](https://github.com/python-escpos/python-escpos) library
 - Integration structure based on [integration_blueprint](https://github.com/ludeeus/integration_blueprint)
