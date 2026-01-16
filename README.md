@@ -35,7 +35,7 @@ To ensure Home Assistant never loses the connection, you **must** assign a stati
 ### Using EpsonNet Config (Recommended)
 1. Download the **EpsonNet Config** utility from the [Epson Support Site](https://download.epson-biz.com/).
 2. Connect the printer to your network via Ethernet.
-3. Open the utility; it will scan and find your TM-T88.
+3. Open the utility; it will scan and find your TM-T88VI.
 4. Select the printer and go to **TCP/IP** -> **Basic**.
 5. Change the method to **Manual**.
 6. Assign a static IP (e.g., `192.168.1.50`), Subnet Mask (`255.255.255.0`), and Gateway (your router).
