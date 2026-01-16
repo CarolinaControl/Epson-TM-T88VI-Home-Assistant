@@ -52,6 +52,7 @@ To ensure Home Assistant never loses the connection, you **must** assign a stati
 
 ## 3. Home Assistant ha-receipt_printer Integration Installation
 ### HACS (Recommended)
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Zacs&repository=ha-receipt_printer&category=Integration)
 
 1. In HACS, click on "Integrations"
 2. Click the three dots in the top right corner
