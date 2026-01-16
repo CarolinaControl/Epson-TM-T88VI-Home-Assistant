@@ -2,7 +2,7 @@
 
 A comprehensive guide to setting up Zac's [ha-receipt_printer](https://github.com/zacs/ha-receipt_printer) integration specifically for the **Epson TM-T88VI**  thermal printers over a network connection.
 
-You must have  [home assistant](https://www.home-assistant.io/) to set this printer up.
+You must have  [Home Assistant](https://www.home-assistant.io/) to set this printer up.
 ---
 
 ## Table of Contents
