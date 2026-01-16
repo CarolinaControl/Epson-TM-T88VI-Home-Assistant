@@ -47,7 +47,7 @@ To ensure Home Assistant never loses the connection, you **must** assign a stati
 3.Login (Default: User: epson, Pass: <serial number of printer>).
 4.Navigate to TCP/IP Settings and set your Static IP.
 
-## 3.ha-receipt_printer Home Assistant Integration Installation
+## 3.Home Assistant ha-receipt_printer Integration Installation
 ### HACS (Recommended)
 
 1. In HACS, click on "Integrations"
