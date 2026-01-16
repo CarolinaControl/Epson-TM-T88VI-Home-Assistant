@@ -45,8 +45,8 @@ To ensure Home Assistant never loses the connection, you **must** assign a stati
 ### Using the Web Interface
 1. Set your computer's IP to the same subnet as the printer (e.g., if the printer is 192.168.192.168, set your PC to 192.168.192.10).
 2. Open a browser and type the printer's current IP from the printed reciept 
-3.Login (Default: User: epson, Pass: serial number of printer).
-4.Navigate to TCP/IP Settings and set your Static IP.
+3. Login (Default: User: epson, Pass: serial number of printer).
+4. Navigate to TCP/IP Settings and set your Static IP.
 
 ---
 
