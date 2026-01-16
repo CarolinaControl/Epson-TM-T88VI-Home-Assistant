@@ -68,7 +68,7 @@ To ensure Home Assistant never loses the connection, you **must** assign a stati
 5. Place the files you downloaded in the new `receipt_printer` directory you created
 6. Restart Home Assistant
 
-## Configuration
+## 4. Configuration
 
 1. In the Home Assistant UI, navigate to "Configuration" -> "Integrations"
 2. Click the "+" button to add a new integration
@@ -87,33 +87,71 @@ Be patient as it may take 1-2 mins initially to get going.
 
 Different printer models support different widths:
 - **Epson TM-T88V/VI** (80mm): Font A = 42 columns, Font B = 56 columns, Image width = 512 pixels
-- For other models, consult your printer's documentation or the [python-escpos printer profiles](https://python-escpos.readthedocs.io/en/latest/printer_profiles/available-profiles.html)
 
-## Supported Printers
+## 5. Usage & Formatting
 
-This integration uses the [python-escpos](https://github.com/python-escpos/python-escpos) library and supports **Epson ESC/POS compatible receipt printers** with network (TCP/IP) connectivity. 
+Once the integration is active, you can send print jobs using the notify.epson_printer service. This can be done via scripts, automations, or the Developer Tools UI.
+### Test
+Basic Service Call to verify your setup, go to Developer Tools > Services and paste the following:
 
-Tested models:
-- Epson TM-T88VI
-
-Other ESC/POS compatible printers should work but may require adjusting the column widths and image size settings during configuration.
-
-**Note**: USB and serial printers are not currently supported.
-
-#### `receipt_printer.print_text`
-
-Print text to the receipt printer with formatting options.
-
-**Service Data:**
-```yaml
-service: receipt_printer.print_text
-data:
-  text: "Hello World!\nThis is a test receipt."
-  align: center  # Options: left, center, right
-  font: a  # Options: a, b
-  bold: false
-  double_height: false
-  double_width: false
-  wrap: true  # Enable automatic word wrapping (default: true)
-  cut: true  # Cut paper after printing
 ```
+yaml
+service: notify.epson_printer
+data:
+  message: "HELLO FROM HOME ASSISTANT"
+  data:
+    align: "center"
+    format: "bold"
+```
+
+###Formatting Attributes
+The Epson TM-T88 series supports hardware-level styling via the data block. You can combine multiple formats in a single call.AttributeOptionsDescriptionalignleft, center, rightHorizontal text alignmentformatbold, underline, double_height, double_widthText styling (can be combined)fonta, ba is standard (42 chars/line), b is small (56 chars/line)
+
+### Automation YAML
+```yaml
+automation:
+  - alias: "Print Welcome Receipt"
+    trigger:
+      - platform: state
+        entity_id: person.john
+        to: "home"
+    action:
+      - service: receipt_printer.print_text
+        data:
+          text: |
+            ================================
+                 WELCOME HOME JOHN!
+            ================================
+            
+            Time: {{ now().strftime('%H:%M:%S') }}
+            Date: {{ now().strftime('%Y-%m-%d') }}
+            
+            Temperature: {{ states('sensor.living_room_temperature') }}°C
+            
+            ================================
+          align: center
+          cut: true
+```
+## Troubleshooting
+
+### Printer not connecting
+
+1. Verify the printer's IP address is correct
+2. Ensure the printer is powered on and connected to your network
+3. Check that your Home Assistant instance can reach the printer's IP (try pinging it)
+4. Verify no firewall is blocking communication on the printer's port (typically 9100)
+
+### Print quality issues
+
+- Clean the printer's print head according to manufacturer instructions
+- Check paper quality and ensure it's compatible with thermal printing
+- Verify paper is loaded correctly
+
+### Paper status not updating
+
+The paper status depends on the printer's sensors. Some printer models may not support all status queries. The integration will still function for printing even if status updates are unavailable.
+
+## Credits
+- 90% of this guide is from [ha-receipt_printer](https://github.com/zacs/ha-receipt_printer/issues/new?template=bug_report.yml)
+- Built on top of the [python-escpos](https://github.com/python-escpos/python-escpos) library
+- Integration structure based on [integration_blueprint](https://github.com/ludeeus/integration_blueprint)
