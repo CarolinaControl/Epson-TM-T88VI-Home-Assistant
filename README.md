@@ -97,7 +97,7 @@ Different printer models support different widths:
 
 ## 5. Usage & Formatting
 
-Once the integration is active, you can send test prints using ```receipt_printer.print_text```. This can be done via Developer Tools > Action > receipt_printer.print_text
+Once the integration is active, you can send test prints using ```receipt_printer.print_text```. This can be done via Developer Tools > Action > Print Text
 ### Test
 ```yaml
 action: receipt_printer.print_text
