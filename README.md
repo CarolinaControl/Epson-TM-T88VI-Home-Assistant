@@ -4,7 +4,7 @@ A comprehensive guide to setting up the [ha-receipt_printer](https://github.com/
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 1. Printer Hardware Setup
 2. Network Configuration (Static IP)
 3. Home Assistant Integration Installation
